@@ -44,3 +44,21 @@ function calcular() {
 function borrar() {
     display.value = '';
 }
+document.addEventListener('keydown', function(event) {
+    // Si la tecla es un número
+    if (event.key >= '0' && event.key <= '9') {
+        agregar(event.key);
+    }
+    // Si la tecla es '+'
+    if (event.key === '+') {
+        agregar('+');
+    }
+    // Si la tecla es 'Enter'
+    if (event.key === 'Enter') {
+        calcular();
+    }
+    // Si la tecla es 'Backspace'
+    if (event.key === 'Backspace') {
+        borrar();
+    }
+});
